@@ -277,21 +277,21 @@
       </plugin>
     </plugins>
 
-    <!--<resources>-->
-      <!--&lt;!&ndash; 制定资源加载的路径 &ndash;&gt;-->
-      <!--<resource>-->
-        <!--<directory>src/main/java</directory>-->
-        <!--<includes>-->
-          <!--<include>**/*.properties</include>-->
-          <!--<include>**/*.xml</include>-->
-        <!--</includes>-->
-        <!--<filtering>false</filtering>-->
-      <!--</resource>-->
-      <!--<resource>-->
-        <!--<directory>src/main/resources</directory>-->
-        <!--<filtering>false</filtering>-->
-      <!--</resource>-->
-    <!--</resources>-->
+    <resources>
+      <!-- 制定资源加载的路径 -->
+      <resource>
+        <directory>src/main/java</directory>
+        <includes>
+          <include>**/*.properties</include>
+          <include>**/*.xml</include>
+        </includes>
+        <filtering>false</filtering>
+      </resource>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>false</filtering>
+      </resource>
+    </resources>
     <testResources>
       <testResource>
         <directory>src/test/resources</directory>

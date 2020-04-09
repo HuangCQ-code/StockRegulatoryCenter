@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stock.mapper.SysOperationLogMapper">
+  <resultMap id="BaseResultMap" type="com.stock.entity.SysOperationLog">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="method" jdbcType="VARCHAR" property="method" />
+    <result column="parameters" jdbcType="VARCHAR" property="parameters" />
+    <result column="execution_time" jdbcType="BIGINT" property="executionTime" />
+    <result column="visit_millis" jdbcType="BIGINT" property="visitMillis" />
+    <result column="create_millis" jdbcType="BIGINT" property="createMillis" />
+    <result column="last_update_millis" jdbcType="BIGINT" property="lastUpdateMillis" />
+    <result column="extra" jdbcType="VARCHAR" property="extra" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, username, ip, url, method, parameters, execution_time, visit_millis, create_millis, 
+    last_update_millis, extra
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sys_operation_log
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sys_operation_log
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.stock.entity.SysOperationLog" useGeneratedKeys="true">
+    insert into sys_operation_log (username, ip, url, 
+      method, parameters, execution_time, 
+      visit_millis, create_millis, last_update_millis, 
+      extra)
+    values (#{username,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{method,jdbcType=VARCHAR}, #{parameters,jdbcType=VARCHAR}, #{executionTime,jdbcType=BIGINT}, 
+      #{visitMillis,jdbcType=BIGINT}, #{createMillis,jdbcType=BIGINT}, #{lastUpdateMillis,jdbcType=BIGINT}, 
+      #{extra,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.stock.entity.SysOperationLog" useGeneratedKeys="true">
+    insert into sys_operation_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        username,
+      </if>
+      <if test="ip != null">
+        ip,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="method != null">
+        method,
+      </if>
+      <if test="parameters != null">
+        parameters,
+      </if>
+      <if test="executionTime != null">
+        execution_time,
+      </if>
+      <if test="visitMillis != null">
+        visit_millis,
+      </if>
+      <if test="createMillis != null">
+        create_millis,
+      </if>
+      <if test="lastUpdateMillis != null">
+        last_update_millis,
+      </if>
+      <if test="extra != null">
+        extra,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="username != null">
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="parameters != null">
+        #{parameters,jdbcType=VARCHAR},
+      </if>
+      <if test="executionTime != null">
+        #{executionTime,jdbcType=BIGINT},
+      </if>
+      <if test="visitMillis != null">
+        #{visitMillis,jdbcType=BIGINT},
+      </if>
+      <if test="createMillis != null">
+        #{createMillis,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateMillis != null">
+        #{lastUpdateMillis,jdbcType=BIGINT},
+      </if>
+      <if test="extra != null">
+        #{extra,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.stock.entity.SysOperationLog">
+    update sys_operation_log
+    <set>
+      <if test="username != null">
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null">
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="method != null">
+        method = #{method,jdbcType=VARCHAR},
+      </if>
+      <if test="parameters != null">
+        parameters = #{parameters,jdbcType=VARCHAR},
+      </if>
+      <if test="executionTime != null">
+        execution_time = #{executionTime,jdbcType=BIGINT},
+      </if>
+      <if test="visitMillis != null">
+        visit_millis = #{visitMillis,jdbcType=BIGINT},
+      </if>
+      <if test="createMillis != null">
+        create_millis = #{createMillis,jdbcType=BIGINT},
+      </if>
+      <if test="lastUpdateMillis != null">
+        last_update_millis = #{lastUpdateMillis,jdbcType=BIGINT},
+      </if>
+      <if test="extra != null">
+        extra = #{extra,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.stock.entity.SysOperationLog">
+    update sys_operation_log
+    set username = #{username,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      method = #{method,jdbcType=VARCHAR},
+      parameters = #{parameters,jdbcType=VARCHAR},
+      execution_time = #{executionTime,jdbcType=BIGINT},
+      visit_millis = #{visitMillis,jdbcType=BIGINT},
+      create_millis = #{createMillis,jdbcType=BIGINT},
+      last_update_millis = #{lastUpdateMillis,jdbcType=BIGINT},
+      extra = #{extra,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
