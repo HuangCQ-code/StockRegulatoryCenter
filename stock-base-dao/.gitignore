@@ -1,0 +1,10 @@
+*.iml
+*.jar
+*.class
+target/
+.idea/
+.classpath
+.setting/
+*.log/
+mybatis/src
+db_desin/stock.pdb
