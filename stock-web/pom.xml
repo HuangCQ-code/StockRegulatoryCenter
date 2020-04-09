@@ -61,4 +61,16 @@
 
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>
+                    <port>80</port>
+                </configuration>
+                <version>2.2</version>
+            </plugin>
+        </plugins>
+    </build>
 </project>

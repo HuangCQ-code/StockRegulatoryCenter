@@ -2,6 +2,8 @@ package com.stock.mapper;
 
 import com.stock.entity.SysOperationLog;
 
+import java.util.List;
+
 public interface SysOperationLogMapper {
     int deleteByPrimaryKey(Long id);
 
@@ -14,4 +16,7 @@ public interface SysOperationLogMapper {
     int updateByPrimaryKeySelective(SysOperationLog record);
 
     int updateByPrimaryKey(SysOperationLog record);
+
+    //新增
+    List<SysOperationLog> findAll();
 }
