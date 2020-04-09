@@ -11,6 +11,7 @@
   <modules>
     <module>stock-base-dao</module>
     <module>stock-base-service</module>
+    <module>stock-web</module>
   </modules>
 
   <name>parent</name>
