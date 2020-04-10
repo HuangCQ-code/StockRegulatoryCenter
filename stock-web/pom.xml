@@ -53,6 +53,11 @@
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
         <!--文件 上传-->
         <dependency>
             <groupId>commons-fileupload</groupId>
