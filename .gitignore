@@ -6,3 +6,6 @@ target/
 .classpath
 .setting/
 *.log/
+.settings/
+.project
+.gitignore
